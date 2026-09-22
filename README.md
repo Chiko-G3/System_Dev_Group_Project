@@ -34,7 +34,7 @@ The system was developed using **Python (Tkinter)** and **SQLite**, following a 
 
 1️⃣ Clone the Repository
 
-https://github.com/MohamedHamouda23/Apartment-Management
+https://github.com/Chiko/System_Dev_Group_Project
 
 2️⃣ Navigate to Project Directory
 
