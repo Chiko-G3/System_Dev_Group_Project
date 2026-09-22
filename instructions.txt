@@ -1,0 +1,107 @@
+Paragon Apartment Management System (PAMS)
+
+
+1. Clone the Repository First
+
+git clone https://github.com/MohamedHamouda23/software_dev-Paragon-Apartment-Management.git
+
+--------------------------------------------------
+
+2. First-Time Setup
+
+Navigate to the system folder first:
+
+cd software_dev-Paragon-Apartment-Management/system
+
+Install Required Packages
+
+macOS:
+pip3 install reportlab pytest tkcalendar
+
+Windows:
+pip install reportlab pytest tkcalendar
+--------------------------------------------------
+
+3. Setup Database
+
+Before running the system, initialize the database using the schema file.
+
+macOS / Linux:
+cd database
+sqlite3 database.db < schema.sql
+cd ..
+
+Windows (Command Prompt):
+cd database
+sqlite3 database.db < schema.sql
+cd ..
+
+--------------------------------------------------
+
+4. Run the System
+
+Make sure you are inside the system folder:
+
+cd software_dev-Paragon-Apartment-Management/system
+
+macOS:
+python3 -m main.index
+
+Windows:
+py -m main.index
+or
+python -m main.index
+
+--------------------------------------------------
+
+5. How to Use
+
+- Run the system
+- Login using credentials
+- Access modules based on your role
+
+--------------------------------------------------
+
+6. Test Accounts
+
+Administrators
+- 1234 / 1234
+- ava.admin@bristol.com / hash36
+
+Managers
+- lucas@manager.com / hash4
+- ben.manager@bristol.com / hash37
+
+Front-desk Staff
+- oliver@frontdesk.com / hash6
+- lily@f.com / h16
+
+Finance Managers
+- noah@finance.com / hash8
+- alice.f@bristol.com / hash32
+
+Maintenance Staff
+- aisha@maintenance.com / hash7
+- jack@m.com / h13
+
+--------------------------------------------------
+
+7. Testing
+
+Run All Tests
+
+macOS:
+python3 -m pytest
+
+Windows:
+py -m pytest
+or
+python -m pytest
+
+--------------------------------------------------
+
+8. Notes
+
+- Use Python 3.10+
+- Always run inside the system folder
+- tkinter and sqlite3 are built-in (no installation needed)

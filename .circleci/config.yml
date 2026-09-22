@@ -1,0 +1,43 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.10
+    working_directory: ~/project
+    steps:
+      - checkout
+
+      - run:
+          name: Install system dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3-tk
+
+      - restore_cache:
+          keys:
+            - v2-pip-cache-{{ checksum "system/requirements.txt" }}
+            - v2-pip-cache-
+
+      - run:
+          name: Install Python dependencies
+          command: |
+            cd system
+            pip install --upgrade pip
+            pip install -r requirements.txt pytest
+
+      - save_cache:
+          key: v2-pip-cache-{{ checksum "system/requirements.txt" }}
+          paths:
+            - ~/.cache/pip
+
+      - run:
+          name: Run pytest
+          command: |
+            cd system
+            python -m pytest "${PYTEST_TARGET:-test}" -v
+
+workflows:
+  test_pipeline:
+    jobs:
+      - test
